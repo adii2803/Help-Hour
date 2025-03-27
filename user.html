@@ -13,107 +13,163 @@
 
     <style>
         body, html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
+        }
 
         /* Navbar */
         .navbar {
             background: #ff7300;
+            padding: 15px 0;
         }
         .navbar-brand {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
             color: #fff !important;
         }
         .nav-link {
             color: #fff !important;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 500;
         }
+        .nav-link:hover {
+            color: #f1f1f1 !important;
+        }
         .search-box {
-            border-radius: 30px;
+            border-radius: 25px;
             padding: 8px 15px;
             border: none;
         }
         .search-btn {
             background: #fff;
             color: #ff7300;
-            border-radius: 30px;
+            border-radius: 25px;
             padding: 8px 15px;
             border: none;
         }
 
         /* Hero Section */
         .hero-section {
-            
-            color: #ff7300;
+            background-color: #ff7300;
+            color: #fff;
             text-align: center;
+            padding: 80px 20px;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-top: 20px;
+        }
+
+        /* Providers Section */
+        .providers-section {
             padding: 60px 20px;
+            background-color: #f4f4f4;
         }
-
-        /* Services Section */
-        .services-section {
-            padding: 50px 20px;
-        }
-        .service-card {
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        .provider-card {
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
             text-align: center;
             padding: 20px;
             transition: 0.3s;
+            background-color: #fff;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        .service-icon {
-            font-size: 50px;
-            color: #ff7300;
-        }
-
-        /* Footer */
-        .footer {
-    width: 100vw;
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    left: 0;
-}
-
-        .social-icons a {
-            color: white;
-            margin: 0 10px;
-            font-size: 20px;
-        }
-        /* Services Section */
-        .services-section, .providers-section {
-            padding: 50px 20px;
-        }
-        .service-card, .provider-card {
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            text-align: center;
-            padding: 20px;
-            transition: 0.3s;
-            height: 100%;
-        }
-        .service-card:hover, .provider-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        .service-icon {
-            font-size: 50px;
-            color: #ff7300;
+        .provider-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
         }
         .provider-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
+        }
+        .provider-card h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .provider-card p {
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+        .provider-card i {
+            font-size: 1.25rem;
+            color: #ff7300;
+        }
+        .provider-card .btn-warning {
+            background-color: #ff7300;
+            border: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .provider-card .btn-warning:hover {
+            background-color: #ff5722;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+        .service-card {
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            text-align: center;
+            padding: 30px;
+            transition: 0.3s;
+            background-color: #fff;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .service-card i {
+            font-size: 50px;
+            color: #ff7300;
+        }
+        .service-card h4 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+        .service-card p {
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .social-icons a {
+            color: white;
+            margin: 0 15px;
+            font-size: 25px;
+        }
+        .footer p {
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.6rem;
+            }
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            .provider-card, .service-card {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -148,12 +204,15 @@
             <p>Your One-Stop Solution for All Home Services</p>
         </div>
     </section>
+
+    <!-- Providers Section -->
     <section class="providers-section">
         <div class="container">
             <h2 class="text-center mb-4">Service Providers Near You</h2>
             <div class="row">
+                <!-- Provider 1 -->
                 <div class="col-md-4 mb-4">
-                    <div class="provider-card p-4">
+                    <div class="provider-card">
                         <img src="electrician.jpg" alt="Electrician" class="provider-img">
                         <h4>Electrician</h4>
                         <p>John Doe</p>
@@ -162,8 +221,9 @@
                         <a href="booknow.html"><button class="btn btn-warning">Book Now</button></a>
                     </div>
                 </div>
+                <!-- Provider 2 -->
                 <div class="col-md-4 mb-4">
-                    <div class="provider-card p-4">
+                    <div class="provider-card">
                         <img src="plumber.jpg" alt="Plumber" class="provider-img">
                         <h4>Plumbing</h4>
                         <p>Jane Smith</p>
@@ -172,8 +232,9 @@
                         <a href="booknow.html"><button class="btn btn-warning">Book Now</button></a>
                     </div>
                 </div>
+                <!-- Provider 3 -->
                 <div class="col-md-4 mb-4">
-                    <div class="provider-card p-4">
+                    <div class="provider-card">
                         <img src="housecleaning.jpg" alt="Home Cleaning" class="provider-img">
                         <h4>Home Cleaning</h4>
                         <p>Emma Wilson</p>
@@ -185,6 +246,7 @@
             </div>
         </div>
     </section>
+
     <!-- Services Section -->
     <section class="services-section">
         <div class="container">
@@ -192,7 +254,7 @@
             <div class="row">
                 <!-- Service 1 -->
                 <div class="col-md-4 mb-4">
-                    <div class="service-card p-4">
+                    <div class="service-card">
                         <i class="fa fa-bolt service-icon"></i>
                         <h4>Electrician</h4>
                         <p>Expert electricians for all home and office electrical needs.</p>
@@ -201,33 +263,32 @@
 
                 <!-- Service 2 -->
                 <div class="col-md-4 mb-4">
-                    <div class="service-card p-4">
+                    <div class="service-card">
                         <i class="fa fa-wrench service-icon"></i>
                         <h4>Plumbing</h4>
-                        <p>Professional plumbing services available at your doorstep.</p>
+                        <p>High-quality plumbing services for all your needs.</p>
                     </div>
                 </div>
 
                 <!-- Service 3 -->
                 <div class="col-md-4 mb-4">
-                    <div class="service-card p-4">
+                    <div class="service-card">
                         <i class="fa fa-broom service-icon"></i>
                         <h4>Home Cleaning</h4>
-                        <p>Get your home cleaned by trained professionals.</p>
+                        <p>Thorough and reliable cleaning for your home and office.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-               
     <!-- Footer -->
     <footer class="footer">
-        <div class="container-fluid">
-            <p>Contact: +91 98765 43210 | Email: support@helphour.com</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy; 2025 Help Hour. All Rights Reserved.</p>
+        <p>&copy; 2025 Help Hour. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
         </div>
     </footer>
 
