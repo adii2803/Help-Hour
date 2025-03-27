@@ -52,8 +52,8 @@
 
         /* Hero Section */
         .hero-section {
-            background-color: #ff7300;
-            color: #fff;
+            background-color: #ffffff;
+            color: #ff7300;
             text-align: center;
             padding: 80px 20px;
         }
@@ -204,83 +204,90 @@
             <p>Your One-Stop Solution for All Home Services</p>
         </div>
     </section>
-
-    <!-- Providers Section -->
-    <section class="providers-section">
-        <div class="container">
-            <h2 class="text-center mb-4">Service Providers Near You</h2>
-            <div class="row">
-                <!-- Provider 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="provider-card">
-                        <img src="electrician.jpg" alt="Electrician" class="provider-img">
-                        <h4>Electrician</h4>
-                        <p>John Doe</p>
-                        <p>Expert in home electrical repairs & installations.</p>
-                        <p><i class="fa fa-star text-warning"></i> 4.8/5</p>
-                        <a href="booknow.html"><button class="btn btn-warning">Book Now</button></a>
-                    </div>
+<!-- Providers Section -->
+<section class="providers-section">
+    <div class="container">
+        <h2 class="text-center mb-4">Service Providers Near You</h2>
+        <div class="row">
+            <!-- Provider 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="provider-card">
+                    <img src="electrician.jpg" alt="Electrician" class="provider-img">
+                    <h4>Electrician</h4>
+                    <p>John Doe</p>
+                    <p>Expert in home electrical repairs & installations.</p>
+                    <p><i class="fa fa-star text-warning"></i> 4.8/5</p>
+                    <a href="booknow.html?service=Electrician&provider=John%20Doe&rating=4.8">
+                        <button class="btn btn-warning">Book Slot</button>
+                    </a>
+                    <button class="btn btn-success mt-2" onclick="bookNow('Electrician', 'John Doe')">Book Now</button>
                 </div>
-                <!-- Provider 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="provider-card">
-                        <img src="plumber.jpg" alt="Plumber" class="provider-img">
-                        <h4>Plumbing</h4>
-                        <p>Jane Smith</p>
-                        <p>Reliable plumbing services for your home and office.</p>
-                        <p><i class="fa fa-star text-warning"></i> 4.6/5</p>
-                        <a href="booknow.html"><button class="btn btn-warning">Book Now</button></a>
-                    </div>
+            </div>
+            <!-- Provider 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="provider-card">
+                    <img src="plumber.jpg" alt="Plumber" class="provider-img">
+                    <h4>Plumbing</h4>
+                    <p>Jane Smith</p>
+                    <p>Reliable plumbing services for your home and office.</p>
+                    <p><i class="fa fa-star text-warning"></i> 4.6/5</p>
+                    <a href="booknow.html?service=Plumbing&provider=Jane%20Smith&rating=4.6">
+                        <button class="btn btn-warning">Book Slot</button>
+                    </a>
+                    <button class="btn btn-success mt-2" onclick="bookNow('Plumbing', 'Jane Smith')">Book Now</button>
                 </div>
-                <!-- Provider 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="provider-card">
-                        <img src="housecleaning.jpg" alt="Home Cleaning" class="provider-img">
-                        <h4>Home Cleaning</h4>
-                        <p>Emma Wilson</p>
-                        <p>Get your home cleaned by experienced professionals.</p>
-                        <p><i class="fa fa-star text-warning"></i> 4.9/5</p>
-                        <a href="booknow.html"><button class="btn btn-warning">Book Now</button></a>
-                    </div>
+            </div>
+            <!-- Provider 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="provider-card">
+                    <img src="housecleaning.jpg" alt="Home Cleaning" class="provider-img">
+                    <h4>Home Cleaning</h4>
+                    <p>Emma Wilson</p>
+                    <p>Get your home cleaned by experienced professionals.</p>
+                    <p><i class="fa fa-star text-warning"></i> 4.9/5</p>
+                    <a href="booknow.html?service=Home%20Cleaning&provider=Emma%20Wilson&rating=4.9">
+                        <button class="btn btn-warning">Book Slot</button>
+                    </a>
+                    <button class="btn btn-success mt-2" onclick="bookNow('Home Cleaning', 'Emma Wilson')">Book Now</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Services Section -->
-    <section class="services-section">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Services</h2>
-            <div class="row">
-                <!-- Service 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="service-card">
-                        <i class="fa fa-bolt service-icon"></i>
-                        <h4>Electrician</h4>
-                        <p>Expert electricians for all home and office electrical needs.</p>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="service-card">
-                        <i class="fa fa-wrench service-icon"></i>
-                        <h4>Plumbing</h4>
-                        <p>High-quality plumbing services for all your needs.</p>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="service-card">
-                        <i class="fa fa-broom service-icon"></i>
-                        <h4>Home Cleaning</h4>
-                        <p>Thorough and reliable cleaning for your home and office.</p>
-                    </div>
-                </div>
+<!-- Modal for booking confirmation -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookingModalLabel">Booking Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Your service is on the way! We will contact you soon.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+
+<!-- Add the Bootstrap JS for modal functionality -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function bookNow(service, provider) {
+        // You can use these values if you want to display the service details in the modal
+        console.log(`Booking ${service} with ${provider}`);
+
+        // Show the confirmation modal
+        var myModal = new bootstrap.Modal(document.getElementById('bookingModal'));
+        myModal.show();
+    }
+</script>
+
+
 
     <!-- Footer -->
     <footer class="footer">
